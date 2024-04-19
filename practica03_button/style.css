@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(222, 233, 228);
+}
+
+.btn{
+    border: 5px solid rgb(8, 57, 8);
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+}

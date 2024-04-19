@@ -1,0 +1,85 @@
+
+ul{
+    list-style-type: none;
+}
+
+
+.squares{
+    display: flex
+}
+
+.squares-item{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.squares-item--red{
+    background-color: red;
+}
+
+#cuadro-amarillo{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#cuadro-amarillo2{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+#cuadro-amarillo3{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    position: absolute;
+    left: 32%;
+    top: 32%;
+    transform: translate(-50%-50%);
+    
+}
+
+.squares-item--yellow{
+    background-color: yellow;
+    border-radius: 5px;
+}
+
+.squares-item--green{
+    background-color: green;
+}
+
+.squares-item--blue{
+    background-color: lightseagreen;
+    border-radius: 5px;
+}
+
+.squares-item--purple{
+    background-color: rgb(46, 19, 89);
+    border-radius: 5px;
+}
+
+.squares-item--superpurple{
+    background-color: rgb(134, 59, 255);
+
+}
+
+.squares-item--pink{
+    background-color: rgb(192, 12, 150);
+    border-radius: 5px;
+}
+
+.squares-item--grey{
+    background-color: rgb(38, 38, 38);
+    position: relative;
+}
+

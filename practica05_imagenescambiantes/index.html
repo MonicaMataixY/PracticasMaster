@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Imagenes cambiantes</title>
+</head>
+
+
+<body>
+    <h2>
+        VARITAS A TUTIIII
+    </h2>
+
+<!--picture-->
+<picture>
+    <source srcset="img/img/imgset/voldemort-large.jpg" media="(min-width: 1000px)">
+    <source srcset="img/img/imgset/voldemort-medium.jpg" media="(min-width: 400px)">
+    <source srcset="img/img/imgset/voldemort-small.jpg" media="(min-width: 200px)">
+    <img src="img/img/voldemort-triste.jpg" alt="voldemort voldemort-triste">
+</picture>
+<!--picture-->
+
+<figure>
+    <img src="img/img/voldemort-triste.jpg" alt="voldemort-triste" id="voldemort">
+    <figcaption>El poder de la varita</figcaption>
+</figure>
+
+<button class="flechas">
+    <img src="img/img/flechas.svg" alt="flechas" title="flechas">
+</button>
+
+<script>
+    /* 1.Pulso el botón
+    2. Cambia la foto*/
+
+    //1. Capturo los elementos que necesito para actuar
+
+    //boton flechas
+    const btnFlechas = document.querySelector('.flechas');
+    console.log(btnFlechas)
+    
+    //foto voldemort
+    const voldermortImg = document.querySelector('#voldemort')
+    console.log(voldermortImg)
+
+    //2. Añadir EVENTO click al botón flechas
+    btnFlechas.addEventListener('click', cambiarFoto);
+    
+    //3. Definir lo que va a suceder cuando haga click
+    function cambiarFoto() {
+        //obtener src de img 
+        const ruta = voldermortImg.getAttribute('src');
+
+        //log
+        console.log('ruta')
+
+        //pregunta: si la ruta es x
+        if(ruta == "img/img/voldemort-triste.jpg"){
+
+            //haz esto
+            voldermortImg.src ="img/img/varitas_voldemort.jpg";
+        }
+        //si no 
+        else {
+            //haz esto
+            voldermortImg.src = "img/img/voldemort-triste.jpg"
+        }
+        
+    }
+        
+</script>
+
+
+
+</body>
+
+</html>

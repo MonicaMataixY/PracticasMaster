@@ -1,0 +1,36 @@
+.my-table{
+    border:2px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+    font-family:'Courier New', Courier, monospace;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.my-table__row1{
+    background-color: blue;
+    color: aliceblue;
+}
+
+.my-table__row2{
+    background-color: rgb(106, 25, 186);
+    color: rgb(0, 0, 0);
+}
+.my-table__row3{
+    background-color: rgb(155, 115, 195);
+    color: rgb(0, 0, 0);
+}
+.my-table__row4{
+    background-color: rgb(178, 162, 195);
+    color: rgb(0, 0, 0);
+}
+.my-table__row5{
+    background-color: rgb(190, 189, 189);
+    color: rgb(0, 0, 0);
+}
+.my-table__cell{
+    border: 2px solid rgb(253, 250, 250);
+    padding: 20px;
+    text-align: center;
+  
+}
