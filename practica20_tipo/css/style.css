@@ -1,0 +1,26 @@
+
+@font-face {
+    font-family: "Romance";
+    src: url("../css/fonts/RomancePrivilege-6YvWM.eot?#iefix") format('embedded-opentype'),
+        url("../css/fonts/RomancePrivilege-6YvWM.woff2") format("woff2"),
+        url("../css/fonts/RomancePrivilege-6YvWM.woff") format("woff"),
+        url("../css/fonts/RomancePrivilege-6YvWM.otf") format("otf"),
+        url("../css/fonts/RomancePrivilege-6YvWM.svg") format("svg"),
+        url("../css/fonts/RomancePrivilege-6YvWM.ttf") format("ttf"),  
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Romance", "Arial";
+    font-size: 2rem; /*px, %, em, rem, vw/vh, ketword no recomendado*/ 
+    color: rgb(200, 400, 005);
+}
+
+p, span, div {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    line-height: 36px;
+}
+
+
+/*fallbacks*/ 
+/*serif, sans-serif, monospace, cursive, fantasy*/

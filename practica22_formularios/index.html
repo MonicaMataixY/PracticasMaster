@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    h2 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    p {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+    
+    }
+
+    .altagym__row {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .altagym__label {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        color: #000000;
+    }
+
+    .altagym__input {
+        background-color: rgb(202, 202, 202);
+        border: solid 1px;
+        border-radius: 5px;
+        padding: 10px;
+        width: 400px;
+    }
+</style>
+
+
+<body>
+
+    <h2>Bienvenido/a a mi gimnasio</h2>
+
+    <p>¡Rellena este formulario y date de alta para poder entrenar con los mejores!</p>
+
+
+    <form action="recibirdata.php" method="post" name="altagym" enctype="multipart/form-data">
+
+        <div class="altagym__row">
+            <label class="altagym__label" for="">Nombre y Apellidos</label>
+            <input class="altagym__input" type="text" required placeholder="inserta tu nombre">
+        </div>
+        
+
+        <div class="altagym__row">
+            <label class="altagym__label" for="">Teléfono</label>
+            <input class="altagym__input" type="text" maxlength="9" required placeholder="inserta tu teléfono">
+        </div>
+
+
+        <div class="altagym__row">
+            <label class="altagym__label" for="">E-mail</label>
+            <input class="altagym__input" type="text" required placeholder="inserta tu e-mail">
+        </div>
+      
+
+        <div class="altagym__row">
+            <label class="altagym__label" for="altagym_edad">Edad</label>
+            <input class="altagym__input" type="number" required id="altagym_edad" placeholder="inserta tu edad">
+        </div>
+
+
+        <div class="altagym__row">
+            <label class="altagym__label" for="">Quiero recibir publi</label>
+            <input class="altagym__input" type="checkbox" name="" id="">
+        </div>
+        
+
+    </form>
+
+</body>
+</html>

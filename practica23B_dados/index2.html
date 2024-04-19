@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex - colorama</title>
+</head>
+
+<body>
+
+    <style>
+        * { padding: 0; margin:0; box-sizing: border-box;}
+
+        div {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(9, 9, 118);
+        }
+
+        .dado {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            border: solid 1px rgb(255, 255, 255);
+            border-radius: 20px;
+            display: flex;
+            justify-content:  space-between;  
+            align-items: flex-start;
+            padding: 25px;
+        }
+
+        .punto {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border: solid 1px black;
+            border-radius: 50%;
+            display: flex; 
+        }
+
+        .punto--1 {  
+            align-self: baseline;     
+        }
+
+        .punto--2 { 
+            align-self:flex-end; 
+        }
+        
+    </style>
+
+    <!--CONTENT-->
+    <div>
+        <div class="dado">
+                <div class="punto punto--1"></div>
+                <div class="punto punto--2"></div>
+        </div>
+    </div>
+    <!--/CONTENT-->
+  
+</body>
+</html>
