@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api de Chuck Norris</title>
+</head>
+
+<body>
+
+    <style>
+    
+    </style>
+
+    <h1>CHUCK'S JOKES</h1>
+    <div class="chuck_joke"><p></p></div>
+    
+    <script>
+
+        //Hago un for para repetirlo 5 veces
+        for (let i = 0; i < 5; i++) {
+        
+        //obten los datos de la siguiente API 
+        fetch ('https://api.chucknorris.io/jokes/random') //me he bajado este recurso url 
+
+        .then(response => response.json())
+
+        .then(chuckJocke => document.body.innerHTML += `<div><p style="border: 4px solid red; padding: 20px"> ${chuckJocke.value}</p> <div>`
+        )
+        }
+        
+           
+    </script>
+
+</body>
+</html>

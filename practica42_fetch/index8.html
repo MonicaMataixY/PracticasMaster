@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números primos</title>
+</head>
+
+<body>
+
+    <style> </style>
+
+    <p></p>
+    
+    <script>
+
+//Crea un programa que calculo los 10 primeros números primos y los muestre en consola 
+
+function* primos() {
+    yield 2
+    yield 3
+    yield 5
+    yield 7
+    yield 11
+    yield 13
+    yield 17
+    yield 19
+    yield 23
+    yield 29
+
+}
+
+const gen = primos();
+
+for (let i = 0; i < 10; i++) {
+    console.log(gen.next());
+
+    document.body.innerHTML +=  gen.next().value + ',';
+    
+}
+    
+
+    </script>
+
+</body>
+</html>

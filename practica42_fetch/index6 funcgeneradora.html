@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+    
+    </style>
+
+ 
+    
+    <script>
+
+    //DEFINICIÓN 
+    function* genaro(){
+        yield "Hola, me llamo genaro (1)"
+        yield "Soy un generador (2)"
+        yield "Estoy muy contento de ser un generador (3)"
+    }
+    
+    //EJECUCIÓN - guardamos la llamada del generador en una variable 
+    const gen = genaro();
+
+    //Ejecuto método next 
+    console.log(gen.next());
+    console.log(gen.next());
+    console.log(gen.next());
+    console.log(gen.next());// este ultimo no da nada 
+           
+
+    //DEFINICIÓN - Como multiplicar numeros 
+    function* genaro2(num){
+        yield num*num
+        yield num*num*num
+        yield num*num*num*num
+    }
+    
+    //EJECUCIÓN - guardamos la llamada del generador en una variable 
+    const gen2 = genaro2(5);
+
+    //Ejecuto método return 
+    console.log(gen2.next());
+    console.log(gen2.next());
+    console.log(gen2.next());
+    console.log(gen2.next()); // este ultimo no da nada 
+
+    //next
+    console.log(gen.next());
+
+    //return
+    console.log(gen2.return());
+
+    //throw
+    document.body.innerHTML = "hay un error, actualiza"
+    console.log(gen.throw(new Error("Error especial creado por Mónica")));
+
+    </script>
+
+</body>
+</html>

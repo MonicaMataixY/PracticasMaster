@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api de gatos</title>
+</head>
+
+<body>
+
+    <style>
+        img {
+            width: 100%;
+        }
+        .gatetes {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    </style>
+
+<h1>CHUCK NORRIS</h1>
+<div class="gatetes">
+  
+</div>
+    
+    <script>
+
+        //Crea un programa que muestre 5 bromas de chuck norris
+        //obten los datos de la siguiente API 
+
+        fetch ('https://api.thecatapi.com/v1/images/search?api_key=live_csfmLZerob2X6nkZ8ws2Cz1AmWWkQm4vGDrmtNg3M5gaZutTnlOPo6AfXVBLV4KO&limit=20') //me he bajado este recurso url 
+
+        //Aquí hay un encadenamiento de promesas (2 .then) (puedo sacar los dos then a la misma altura, así es mas  legible) IMPORTANTE si saco las dos promesas tengo que poner return
+
+        .then((result) =>{return result.json()})
+
+        .then((data) => {
+                data.forEach(cat => {
+                     document.querySelector('.gatetes').innerHTML += `<div> <img src="${cat.url}"></div>` 
+                });
+            }
+        ) 
+        
+    </script>
+
+</body>
+</html>

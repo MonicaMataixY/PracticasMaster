@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números primos</title>
+</head>
+
+<body>
+
+    <style> </style>
+
+ <div></div>
+    
+    <script>
+
+//Crea un programa que calculo los 10 primeros números primos y los muestre en consola 
+
+function* generadorNumerosPrimos() {
+    let contador = 2;
+    let cantidadPrimosEncontrados = 0;
+
+    while (cantidadPrimosEncontrados < 10) {
+        if (esPrimo(contador)) {
+            yield contador;
+            cantidadPrimosEncontrados++;
+        }
+        contador++;
+    }
+}
+
+function esPrimo(numero) {
+    if (numero <= 1) return false;
+    if (numero <= 3) return true;
+
+    if (numero % 2 === 0 || numero % 3 === 0) return false;
+
+    for (let i = 5; i * i <= numero; i = i + 6) {
+        if (numero % i === 0 || numero % (i + 2) === 0) return false;
+    }
+
+    return true;
+}
+
+// Utilizando el generador para obtener los primeros diez números primos
+let generador = generadorNumerosPrimos();
+for (let i = 0; i < 10; i++) {
+    console.log(generador.next().value);
+    document.body.innerHTML = `<div> + generador + </div>`
+}
+
+    </script>
+
+</body>
+</html>
