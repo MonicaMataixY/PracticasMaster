@@ -1,0 +1,47 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+/*selector por clase*/
+.parrafo-alternativo {
+    color: blueviolet; 
+}
+
+/*selector por id*/
+#spanElement{
+    background-color: rgba(0, 0, 255, 0.50);
+}
+
+/*selector por atributo*/
+[title="elemento Discolo Rojo"] {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+/*universal*/
+.section-1 * {
+    color: pink;
+}
+
+/*compuesto*/
+.parrafo-alternativo.con-background{
+    background-color: pink;
+}
+
+/*por descendencia*/
+.section-2 div p{
+    color: yellow;
+}
+
+/*pseudo-clase*/
+.section-3 p:first-child {
+    color: red;
+}
+.section-3 p:nth-child(2) {
+    color: green;
+}
+.section-3 p:last-child {
+    color: blue;
+}
+
+/*todos los hijos de section pero que sean directos, se va a quitar el de section-2 porque tiene un div dentro*/
+section > p {
+    font-size: 21px;
+}

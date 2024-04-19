@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Emotions tools</title>
+</head>
+
+<style>
+    * { padding: 0; margin: 0; box-sizing: border-box; }
+
+    body {
+        background-color: #7595da;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    img {
+        width: 100%;
+    }
+    .emotions-chart__buttons, .emotions-chart__message, .title, .title h2 {
+        padding: 20px;
+    }
+    
+    .title {
+        color: #3a3a3a;
+        padding-bottom: 0;
+    }
+
+    .emotions-chart {
+        display: inline-block;
+        width: 100%;    
+    }
+
+    .emotions-chart__buttons {
+        width: 30%;
+        float: left;
+    }
+
+    .emotions-chart__message {
+        width: 100%;
+        float: left;
+        width: 70%;
+        height: 400px;
+        padding-left: 0;
+    }
+
+    .emotions-chart__buttons-in, .emotions-chart__message-in, .title h2 {
+        background-color: #FFF;
+        border-radius: 4px;   
+    }
+
+    .emotions-chart__message-in {
+        font-size: 44px;
+        padding: 20px;
+        color: #3a3a3a;
+    }
+
+    .emotions-chart__buttons-in button {
+        display: inline-block;
+        width: 100%;
+        border: none;
+        border-top: 1px solid #F5F0FA;
+        background-color: transparent;
+        font-size: 18px;
+        padding: 10px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .random-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        border: none;
+        background-color: #FFF;
+        padding: 10px 10px 8px;
+        border-radius: 4px;
+        cursor: pointer
+    }
+
+</style>
+<body>
+    <div class="title">
+        <h2>
+            Dev Emotions Tool
+        </h2>
+    </div>
+    <section class="emotions-chart">
+        <aside class="emotions-chart__buttons">
+            <div class="emotions-chart__buttons-in">
+                <div>
+                    <button value="iluminacion">ILUMINACIÓN</button>
+                </div>
+                <div>
+                    <button value="paz">PAZ</button>
+                </div>
+                <div>
+                    <button value="alegria">ALEGRÍA</button>
+                </div>
+                <div>
+                    <button value="amor">AMOR</button>
+                </div>
+                <div>
+                    <button value="razonamiento">RAZONAMIENTO</button>
+                </div>
+                <div>
+                    <button value="aceptacion">ACEPTACIÓN</button>
+                </div>
+                <div>
+                    <button value="voluntad">VOLUNTAD</button> 
+                </div>
+                <div>
+                    <button value="neutralidad">NEUTRALIDAD</button>
+                </div>
+                <div>
+                    <button value="coraje">CORAJE</button>
+                </div>
+                <div>
+                    <button value="orgullo">ORGULLO</button>
+                </div>
+                <div>
+                    <button value="ira">IRA</button>
+                </div>
+                <div>
+                    <button value="deseo">DESEO</button>
+                </div>
+                <div>
+                    <button value="miedo">MIEDO</button>
+                </div>
+                <div>
+                    <button value="tristeza">TRISTEZA</button>
+                </div>
+                <div>
+                    <button value="apatia">APATÍA</button>
+                </div>
+                <div>
+                    <button value="culpa">CULPA</button>
+                </div>
+                <div>
+                    <button value="verguenza">VERGUENZA</button>
+                </div>
+            </div>
+            
+        </aside>  
+        <main class="emotions-chart__message">
+            <div class="emotions-chart__message-in">
+            </div>
+        </main>
+        <button class="random-button"> <img src="img/random.svg" alt="random"> </button>
+    </section>
+    
+    <script>
+        const mensajes= {
+            verguenza: "Me da verguenzilla preguntar dudas",
+            culpa: "Tenía que haber hecho el código más limpio pero me pudo la pereza :/",
+            apatia: "Paso de programar hoy, es más, paso de pasar de programar...",
+            tristeza: "No valgo para programar",
+            miedo: "Uuuuuuuuuuhhh!! Que viene Javascript!!",
+            deseo: "Me casaba con esa línea de css (pero te dejó por otro, pobre diablo :D)",
+            ira: "GRFTXFGRR!!! No me funciona!!!!",
+            orgullo: "Mira que PEASO de web he hecho",
+            coraje: "No me sale ni una práctica pero VAMOS VAMOS!!, que rule JS!!!",
+            neutralidad: "Soy programador y los programadores no tienen emociones",
+            voluntad: "Si digo que acabo hoy el programa, lo acabo hoy.",
+            aceptacion: "Hoy me ha vencido del código, mañana será otro día.",
+            razonamiento: "Math.floor(x+34-y/array.lenght)...",
+            amor: "Me quiero tanto que en San Valentín reservo cena para 2 y voy sol@",
+            alegria: "Ohhhh siii, es viernes!!!!!",
+            paz: "He terminado el proyecto",
+            iluminacion: "En mi barrio me llaman el Dalai Lama de Javascript",
+        }
+
+        const botones = document.querySelectorAll('button[value]');
+        const randombtn = document.querySelector('.random-button');
+        const mensajeContainer = document.querySelector('.emotions-chart__message-in');
+
+        botones.forEach((boton,index) => {
+
+            //define el color
+            const color = 'hsl('+ Math.floor(280 -(index*(280/botones.length)))+', 100%, 50%)';
+            boton.style.color = color;
+            boton.addEventListener('click', cargaMensaje);
+        });
+
+        randombtn.addEventListener('click', function(){
+            cargaMensaje( Object.keys(mensajes)[Math.floor(Math.random() * 17)])
+        }); 
+
+
+        //así se conecta el mensaje con el botón//
+        function cargaMensaje(emocion) {
+            mensajeContainer.innerHTML = mensajes[this.value] ||mensajes[emocion]
+        }
+        
+    </script>
+
+    
+    
+
+</body>
+</html>

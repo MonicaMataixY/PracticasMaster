@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --magenta-color: rgb(225, 0, 255);
+            --yellow-color: yellow;
+            --cyan-color: cyan;
+            --white-color: #FEFEFE;
+            --grey-bg: #222020;
+        }
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #000;
+            color: var(--white-color);
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--grey-bg);
+            padding: 30px;
+
+            font-size: 3.5rem;
+        }
+
+        header span {
+            cursor: pointer;
+        }
+
+        header span:first-child::after,
+        header span:nth-child(2)::after {
+            content: "|";
+            margin-left: 12px;
+        }
+
+        header span:first-child:hover {
+            color: var(--magenta-color);
+        }
+
+        header span:nth-child(2):hover {
+            color: var(--yellow-color);
+        }
+
+        header span:last-child:hover {
+            color: var(--cyan-color);
+        }
+
+        header span:hover::after {
+            color: var(--white-color);
+        }
+
+        section {
+            padding: 60px 40px 40px 40px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        section div div {
+            height: 70px;
+        }
+
+
+        section div:first-child div {
+
+            background-color: var(--cyan-color);
+            width: 80%
+        }
+
+        section div:nth-child(2) div {
+
+            background-color: var(--magenta-color);
+            width: 70%
+        }
+
+        section div:last-child div {
+
+            background-color: var(--yellow-color);
+            width: 100%;
+        }
+
+        section div div:hover {
+            background-color: var(--white-color);
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            background-color: var(--grey-bg);
+            padding: 30px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--white-color);
+            border-radius: 50%;
+        }
+    </style>
+    <header>
+        <span>be fluor</span>
+
+        <span>be lightful</span>
+
+        <span>be cool</span>
+    </header>
+    <section>
+        <div>
+            <p>cyan</p>
+            <div></div>
+        </div>
+        <div>
+            <p>magenta</p>
+            <div></div>
+        </div>
+        <div>
+            <p>yellow</p>
+            <div></div>
+        </div>
+
+    </section>
+    <footer>
+        <span></span>
+        <span></span>
+        <span></span>
+    </footer>
+
+
+
+</body>
+
+</html>
