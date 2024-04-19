@@ -1,0 +1,78 @@
+ @charset "utf-8";
+/* box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    font-family: 700;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 100px;
+    height: 100vh;
+    gap:10px;
+}
+
+.grid__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.grid__item--2{
+    grid-column: 2/4; /*para decirle que vaya de la columna dos a la cuatro entendiendo que cada columna es la raya negra delante del cuadro de color*/
+    grid-row: 1/4; /*lo mismo para filas*/
+}
+
+.grid__item--5{
+    grid-column: 6; /*hay que indicarle la columna en la que está, sino, lo pone en columna 1*/
+    grid-row: 1/3;
+}
+
+.grid__item--9{
+    grid-column: span 2; /*cuando hay cuadros que  ocupan dos filas*/
+}
+
+.grid__item--16{
+    grid-column: span 2;
+}
+
+.grid__item--22{
+    justify-self: end;
+}
+
+.grid__item--23{
+    align-self: end;
+}
+
+.grid__item--24{
+    justify-self: end;
+    align-self: end;
+}
+
+.photo-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-image: url("img/rowan-heuvel-PgSxHidgJHQ-unsplash.jpg");
+    background-size: cover; /*aunque lo haga grande, me cubre*/
+    background-position: center;
+    mix-blend-mode: darken;
+    top: 0; /*aqui le decimos que nos lo pege a las esquinas*/
+    left: 0;
+    pointer-events: none; /*no me detectes esto a nivel de raton*/
+}
+
+.grid__item:hover{
+    mix-blend-mode: difference;
+}

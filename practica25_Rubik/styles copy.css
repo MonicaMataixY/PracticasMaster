@@ -1,0 +1,60 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1800px;
+    perspective-origin: 50% -50%;
+}
+
+.cube {
+    perspective: 900px;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 200px;
+}
+
+.cube__side{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cube__side--1 {
+    transform: rotateY(312deg) translateX(-5px) translateY(7px) translateZ(93px);
+    }
+    
+    .cube__side--2{
+    transform: rotateX(-90deg) rotateZ(42deg) translateZ(-99px) translateX(-4px);
+    }
+    
+    .cube__side--3{
+    transform: rotateY(43deg) translateZ(94px) translateY(2px);
+    }
+
+.cube__tile {
+    flex-basis: 33.3%;
+    border: 8px solid #000;
+    border-radius: 8px;
+}
+
+.cube__tile:hover {
+    border-color: #0FF;
+}
+
+
+.cube__tile--1{
+    background-color: rgb(255, 0, 0);
+}
+
+.cube__tile--2{
+    background-color: rgb(0, 0, 255);
+}
+
+.cube__tile--1{
+    background-color: rgb(17, 255, 0);
+}

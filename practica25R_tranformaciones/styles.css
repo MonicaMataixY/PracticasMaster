@@ -1,0 +1,27 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(129, 0, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    transform: rotateY(45deg) rotateX(40deg) rotateZ(40deg); /*rotate*/
+    transform: skew(8turn,6deg);  /*skew*/
+    transform: translate(300px,100px); /*translate*/
+    transform: scale(2); /*scale*/
+    transform: matrix(0.4, 0, 0.5, 1.2, 60, 10); /*matrix(scaleX() skewX() scaleY() translateX() translateY()*/
+    
+}

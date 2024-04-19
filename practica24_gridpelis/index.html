@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="fun.js" defer></script>
+    <title>Grid Films</title>
+</head>
+
+<body>
+     <!-- HEADER -->
+        <header class="header">
+                <div class="header__logo">
+                    <img class="image_logo" src="img/ghost.png" alt="ghost">
+                </div> 
+                <nav class="header__menu-container"> 
+                    <ul class="header__menu">
+                        <li class="header__menu-item"><a href="index.html">home</li></a>
+                        <li class="header__menu-item"><a href="about_us.html">about us</li></a>
+                        <li class="header__menu-item"><a href="projects.html">projects</li></a>
+                    <li class="header__menu-item"><a href="contact.html"> contact</li></a>
+                    </ul>
+                </nav>
+                <button class="header__responsive-menu-btn">
+                    <img class="header__responsive-menu-btn-img" src="img/menu-responsive.png" alt="menu-responsive">
+                </button>        
+            </header>
+    <!-- /HEADER -->
+
+    <!-- FILTER -->
+        <section class="filter">
+            <h2 class="filter__title">FILTERED CONTENT</h2>
+            <div class="filter__buttons">
+                <button class="filter__buttons-item" data-filter="all">All</button>
+                <button class="filter__buttons-item" data-filter="comedy">Comedy</button>
+                <button class="filter__buttons-item" data-filter="drama">Drama</button>
+                <button class="filter__buttons-item" data-filter="science-fiction">Science-fiction</button>
+                <button class="filter__buttons-item" data-filter="horror">Horror</button>
+            </div>
+        </section>
+    <!-- FILTER-->
+    
+    <!-- GRID -->
+        <section class="movie-grid">
+            <div class="movie-grid__container">
+                <div class="movie-grid__item movie-grid__item--drama" data-category="drama">
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>BRAVEHEART</h2>
+                </div>
+
+                <div class="movie-grid__item movie-grid__item--sciencefiction" data-category="science-fiction">
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>STARWARS</h2></div>
+                <div class="movie-grid__item movie-grid__item--comedy" data-category="drama" >
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>EL PADRINO</h2></div>
+                <div class="movie-grid__item movie-grid__item--comedy"  data-category="comedy" >
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>JUMANJI</h2></div>
+                <div class="movie-grid__item movie-grid__item--sciencefiction" data-category="science-fiction">
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>MEMENTO</h2></div>
+                <div class="movie-grid__item movie-grid__item--drama" data-category="drama">
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>HARRY POTTER</h2></div>
+                <div class="movie-grid__item movie-grid__item--horror" data-category="horror">
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>MATRIX</h2></div>
+                <div class="movie-grid__item movie-grid__item--drama" data-category="drama">
+                    <div class="movie-grid__mask">
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"> </div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                        <div class="movie-grid__star"> <img src="img/star-off.svg" alt="star_off"></div>
+                    </div>
+                    <h2>EL ÚLTIMO MOHICANO</h2></div>
+            </div>    
+        </section>
+    <!-- /GRID -->
+
+</body>
+</html>

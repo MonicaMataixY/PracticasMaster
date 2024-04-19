@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animaciones 2</title>
+</head>
+
+<body>
+    <style>
+        .square {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation-name: moveSquare;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes moveSquare {
+            from {
+                left:0;
+            }
+
+            to {
+                left:50%
+            }
+        }
+       
+    </style>
+    <div class="square"></div>
+
+</body>
+
+</html>

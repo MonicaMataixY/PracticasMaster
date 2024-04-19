@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cuadrado recorre la web</title>
+</head>
+
+<body>
+    
+<style>
+ * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    .container {
+        background-color: #000;
+        height: 100vh;
+        position: relative;
+    }
+    .square {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 0, 221);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: displacement 2s linear forwards, circleMove 6s 2s infinite;
+        
+        }
+        
+        @keyframes displacement {
+            0% {
+                top: 50%;
+                left:50%;
+                background-color: rgb(255, 0, 221);
+                transform: translate(-50%, -50%); /*eje x (left) eje y (top) se lo ponemos porque se alinea la esquina superior izquierda y asi le decimos que reste ese espacio*/
+            }
+            
+            50% {
+                top: 50%;
+                left:100%;
+                background-color: rgb(255, 0, 0);
+                transform: translate(-100%, -50%);
+            }
+
+            100% {
+                top: 0%;
+                left:100%;
+                background-color: rgb(241, 250, 81);
+                transform: translate(-100%, 0%);
+            }
+            
+         }
+
+         @keyframes circleMove {
+          
+
+            0% {
+                top: 0%;
+                left:100%;
+                background-color: rgb(255, 234, 0);
+                transform: translate(-100%, 0%);
+            }
+            25% {
+                top: 0%;
+                left:0%;
+                background-color: rgb(64, 255, 0);
+                transform: translate(0%, -0%);
+            }
+
+            50% {
+                top: 100%;
+                left:0%;
+                background-color: rgb(0, 255, 255);
+                transform: translate(0%, -100%);
+            }
+
+            75% {
+                top: 100%;
+                left:100%;
+                background-color: rgb(47, 0, 255);
+                transform: translate(-100%, -100%);
+            }
+
+            100% {
+                top: 0%;
+                left:100%;
+                background-color: rgb(255, 0, 0);
+                transform: translate(-100%, 0%);
+            }
+            
+         }
+
+</style>
+
+  
+    <div class= "container">
+        <div class="square"></div>
+    </div>
+    
+    
+    
+
+</body>
+</html>

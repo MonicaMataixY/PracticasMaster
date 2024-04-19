@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Grid</title>
+</head>
+
+<body>
+    <div class="photo-container"></div>
+
+    <div class="grid">
+        <div class="grid__item grid__item--1">1</div>
+        <div class="grid__item grid__item--2">2</div>
+        <div class="grid__item grid__item--3">3</div>
+        <div class="grid__item grid__item--4">4</div>
+        <div class="grid__item grid__item--5">5</div>
+        <div class="grid__item grid__item--6">6</div>
+        <div class="grid__item grid__item--7">7</div>
+        <div class="grid__item grid__item--8">8</div>
+        <div class="grid__item grid__item--9">9</div>
+        <div class="grid__item grid__item--10">10</div>
+        <div class="grid__item grid__item--11">11</div>
+        <div class="grid__item grid__item--12">12</div>
+        <div class="grid__item grid__item--13">13</div>
+        <div class="grid__item grid__item--14">14</div>
+        <div class="grid__item grid__item--15">15</div>
+        <div class="grid__item grid__item--16">16</div>
+        <div class="grid__item grid__item--17">17</div>
+        <div class="grid__item grid__item--18">18</div>
+        <div class="grid__item grid__item--10">19</div>
+        <div class="grid__item grid__item--20">20</div>
+        <div class="grid__item grid__item--21">21</div>
+        <div class="grid__item grid__item--22">22</div>
+        <div class="grid__item grid__item--23">23</div>
+        <div class="grid__item grid__item--24">24</div>
+    </div>
+
+    
+
+
+    <script>
+        // captura de elementos
+        const allItems = document.querySelectorAll('.grid__item');
+        allItems.forEach((item, index) =>{
+        //defino color
+        const color = "hsl("+ Math.floor(280 -(index*(280/allItems.length)))+", 100%, 50%)"; 
+        //asigno color al item
+        item.style.background = color;
+        //MOSAICO FOTOS: item.style.backgroundImage ="url"; si quiero hacer mosaico de fotos y meterlas por java, también puedo meterlas por background-image en cada grid__item--1
+        });
+    </script>
+</body>
