@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Responsive</title>
+</head>
+
+<body>
+
+<style>
+    *{padding: 0; margin: 0; box-sizing: border-box;}
+
+    /*ESTILOS GENERALES*/ 
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .tu{
+        background-color: black;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .tu_text {
+        color: white;
+        font-size: 4rem;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .yo{
+        background-color: white;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .yo_text {
+        color: black;
+        font-size: 4rem;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    
+
+    /*OCULTAR TEXTOS EN PC - ocultar textos solidaridad y poner display row*/
+    @media screen and (min-width: 768px) {
+    .solidaridad {
+        display: none;
+    }
+
+    .solidaridad_text {
+        display: none;
+    }
+    }
+    
+    /*MOBILE - ocultar tu y yo y poner column reverse*/
+    @media screen and (max-width: 768px) {
+        
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tu{
+        display: none;
+    }
+
+    .yo{
+        display: none;
+    }
+    .solidaridad {
+        background-color: white;
+        color: rgb(7, 99, 87);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .solidaridad_tit {
+        color: rgb(7, 99, 87);
+        font-size: 2rem;
+    }
+
+    .solidaridad_text {
+        background-color: rgb(7, 99, 87);
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .solidaridad_texttext {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        padding: 50px;
+    }
+    }
+
+   
+</style>
+
+
+<div class="div container">
+    <div class="tu">
+        <p class="tu_text">tu</div>
+
+    <div class="solidaridad">
+        <p class="solidaridad_tit">SOLIDARIDAD</p>
+    </div>
+
+    <div class="solidaridad_text">
+        <p class="solidaridad_texttext">
+            La solidaridad se construye sobre un mundo sin ego, mejor, más humano y más digno.
+        </p></div>
+
+    <div class="yo">
+        <p class="yo_text">yo</div>
+    </div>
+    
+</div>
+
+</body>
+
+</html>

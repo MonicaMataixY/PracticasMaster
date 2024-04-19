@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+</head>
+
+<body>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        img {
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            margin: 0 auto;
+            max-width: 800px;
+            padding-top: 200px;
+        }
+
+        .photo {
+            width: 50%;
+        }
+
+        .text {
+            width: 50%;
+        }
+        
+        /*TABLET*/
+        @media screen and (max-width: 1024px) {
+            p{
+                color: rgb(69, 255, 17);
+                font-size: 1.5rem;
+            }
+        }
+
+        /*MOBILE*/
+
+        @media screen and (max-width: 600px) {
+            p{
+                color: rgb(255, 17, 57);
+                font-size: 2rem;
+            }
+
+            .container {
+            display: flex;
+            flex-direction: column-reverse;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            }
+
+            .photo {
+            width: 100%;
+            }
+
+            .text {
+            width: 100%;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero repellat laboriosam porro at voluptatum nobis eos deserunt molestiae quisquam delectus nemo doloribus a nostrum necessitatibus, corporis totam cumque nulla inventore!</p>
+        <div>
+            <img class="photo" src="https://picsum.photos/500/500" alt="foto">
+        </div>
+    </div>
+
+   
+
+</body>
+
+</html>

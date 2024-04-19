@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>They are coming</title>
+</head>
+
+<body>
+    <!-- RESP MENU -->
+    <nav class="rsp-menu">
+        <button class="rsp-menu__close">X</button>
+        <ul class="rsp-menu-list">
+            <li class="rsp-menu-list-item"><a href="">HOME</li></a>
+            <li class="rsp-menu-list-item"><a href="">TELEPHONE</li></a>
+            <li class="rsp-menu-list-item"><a href="">THEY ARE COMING</li></a>
+        </ul>
+    </nav>
+    <!-- /RESP MENU -->
+
+    <!-- HEADER -->
+      <header class="header">
+        <div class="header__logo">
+            <img class="image_logo" src="img/logoheader_desktop.png" alt="logo">
+        </div> 
+        <nav class="header__menu-container"> 
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="">HOME</li></a>
+                <li class="header__menu-item"><a href="">TELEPHONE</li></a>
+                <li class="header__menu-item"><a href="">THEY ARE COMING</li></a>
+            </ul>
+        </nav>
+        <button class="header__responsive-menu-btn">
+            <img class="header__responsive-menu-btn-img" src="img/menu-white.svg" alt="menu-responsive">
+        </button>        
+    </header>
+    <!-- /HEADER -->
+
+
+<!-- ALIEN CARDS -->
+<section class="alien_grid">
+    <div class="alien_card">
+        <picture class="alien_image">
+            <source media="(min-width: 720px)" srcset="img/alien_desktop.png">
+            <source media="(min-width: 380px)" srcset="img/alien_mobile.png">
+            <img class="alien_image__img" src="img/alien_desktop.png" alt="alien">
+        </picture>
+        <div class="alien_text"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro labore asperiores at ea hic repudiandae sit optio consectetur officia ratione magni molestiae quasi velit doloribus dicta, iure animi cumque accusamus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro labore asperiores at ea hic repudiandae sit optio consectetur officia ratione magni molestiae quasi velit doloribus dicta, iure animi cumque accusamus!</p></div>
+    </div>
+
+    <div class="alien_card">
+        <picture class="alien_image">
+            <source media="(min-width: 720px)" srcset="img/alien_desktop.png">
+            <source media="(min-width: 380px)" srcset="img/alien_mobile.png">
+            <img class="alien_image__img" src="img/alien_desktop.png" alt="alien">
+        </picture>
+        <div class="alien_text"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro labore asperiores at ea hic repudiandae sit optio consectetur officia ratione magni molestiae quasi velit doloribus dicta, iure animi cumque accusamus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro labore asperiores at ea hic repudiandae sit optio consectetur officia ratione magni molestiae quasi velit doloribus dicta, iure animi cumque accusamus!</p></div>
+    </div>
+
+    <div class="alien_card">
+        <picture class="alien_image">
+            <source media="(min-width: 720px)" srcset="img/alien_desktop.png">
+            <source media="(min-width: 380px)" srcset="img/alien_mobile.png">
+            <img class="alien_image__img" src="img/alien_desktop.png" alt="alien">
+        </picture>
+        <div class="alien_text"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro labore asperiores at ea hic repudiandae sit optio consectetur officia ratione magni molestiae quasi velit doloribus dicta, iure animi cumque accusamus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro labore asperiores at ea hic repudiandae sit optio consectetur officia ratione magni molestiae quasi velit doloribus dicta, iure animi cumque accusamus!</p></div>
+    </div>
+</section>
+<!-- /ALIEN CARDS -->
+
+<!-- FOOTER -->
+<div class="footer">
+    <picture class="alien_image_footer">
+        <source media="(min-width: 720px)" srcset="img/lobofooter_desktop.png">
+        <source media="(min-width: 380px)" srcset="img/lobofooter_desktop.png">
+        <img class="alien_image__imgfooter" src="img/lobofooter_desktop.png" alt="alien">
+    </picture>
+</div>
+<!-- /FOOTER -->
+
+<script>
+    const menuList = document.querySelector('.rsp-menu-list');
+    
+    const rspMenu = document.querySelector('.rsp-menu');
+    
+    const menuBtn = document.querySelector('.header__responsive-menu-btn');
+
+    
+    //abrir menu
+    menuBtn.addEventListener('click', function(){
+        rspMenu.classList.add('active');
+     
+    })
+
+      //cerrar menu
+        menuBtn.addEventListener('click', function(){
+        rspMenu.classList.remove('active');
+    })
+</script>
+
+</body>

@@ -1,0 +1,232 @@
+/*Eliminar estilos de user agents*/
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*Puntero con forma de mano para botones e hipervínculos */
+a, button {
+    cursor: pointer;
+}
+
+/* Eliminar estilos de listas */
+ol, ul, menu {
+    list-style: none;
+}
+
+svg, img {
+    width: 100%;
+}
+
+
+/*DESKTOP FIRST*/
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/*RSP MENU*/
+.rsp-menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    right: -100%;
+    background-color: #334d5c;
+    color: rgb(255, 255, 255);
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+}
+
+.rsp-menu.active {
+    right: 0;
+    transition: 0.2s;
+}
+
+.rsp-menu-list {
+    font-size: 1.8rem;
+    gap: 30px;
+    list-style: none;
+}
+.rsp-menu-list-item {
+    border-bottom: 1px solid #fff9;
+    padding: 30px;
+}
+
+.rsp-menu__close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*Aquí empieza el header*/
+
+.header{
+    background-color: #334d5c;
+    padding: 25px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+
+.header__menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;  
+    justify-content: center;
+}
+@media screen and (max-width:768px) {
+    .header__menu {
+        display: none;
+    }
+}
+
+.image_logo {
+    height: 60px;
+    width: 60px;
+}
+
+.header__responsive-menu-btn-img {
+    height: 40px;
+    width: 40px;
+}
+
+.header__responsive-menu-btn {
+    display: none;
+}
+@media screen and (max-width:768px) {
+    .header__responsive-menu-btn {
+        display: block;
+    }
+}
+
+/* aquí acaba el header*/
+
+/*empieza el alien grid*/
+
+.alien_grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.alien_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #7c97a5;
+    width: 100%;
+}
+
+.alien_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alien_image__img {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+.alien_text {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 20px;
+}
+/*acaba el alien grid*/
+
+/*empieza el footer*/
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #334d5c;
+}
+
+.alien_image__imgfooter{
+    padding: 20px;
+}
+
+
+/*RESPONSIVE -- adapto a tamaños menores decrecientes*/
+
+/*tablet*/
+@media  screen and (max-width:768px) {
+    .alien_grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 30px;
+    }
+}
+
+/*mobile grande*/
+@media  screen and (max-width:600px) {
+    .alien_grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 30px;
+
+    }
+
+    .alien_text {
+        background-color: black;
+        color: rgb(255, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        padding: 25px;
+        font-size: 18px;
+    }
+}
+
+/*mobile pequeño*/
+@media  screen and (max-width:400px) {
+    .alien_grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 30px;
+    }
+
+    .alien_text {
+        background-color: black;
+        color: rgb(255, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        padding: 25px;
+        font-size: 18px;
+    }
+}
+
+
