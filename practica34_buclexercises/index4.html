@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+</head>
+
+<body>
+
+    <script>
+
+function calendario(anio,mes){
+    
+    var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    	var mesReal = mes-1;
+        var fecha=new Date(anio,mesReal);
+        var dias = [];
+        while (fecha.getMonth() === mesReal) {
+          dias.push(new Date(fecha));
+          fecha.setDate(fecha.getDate() + 1);
+       	}
+        document.write(meses[mesReal] +"<br>");
+        document.write('<table border="1"><tr>');
+        var week = 0;
+        for(var i=1;i<=dias.length; i++) {
+          week++;
+          if (week === 7) {    	
+            document.write("<td style='color:red;'>"+i+"</td>");
+            document.write("<tr>");
+            week =0;
+          } else {
+          document.write("<td>"+i+"</td>");
+          }
+        }
+    }
+    calendario(2001,3);
+  
+    </script>
+
+</body>
+</html>

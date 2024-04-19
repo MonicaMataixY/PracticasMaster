@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+
+<body>
+
+    <script>
+
+     //Anatomía
+     //function nombreUnico(parametro1, parametro2){
+        //codigo
+
+        //valor de retorno, el valor que devuelve la funcion cuando la utilizo dentro de una expresión
+        //return (si no pongo nada, me devuelve undefined)
+     //}
+
+
+     //Función que reciba dos numeros y los devuelva sumados 
+
+     function suma(num1,num2){
+        
+        const sumaFinal = num1 + num2;
+        return sumaFinal;
+     }
+
+     suma(4,6)
+     document.body.innerHTML = suma(4,6)
+    
+    // crea una funcion que calcule si un numero es par o impar y lo imprima en la pantalla
+     function calcularParidad(num){
+        if (num % 2 == 0) {return "par"} 
+        else {return "impar"}
+     }
+    
+     document.body.innerHTML = calcularParidad(10)
+
+     // otra forma
+
+     function calcularParidadBis(num) {
+        return num%2 == 0 ? "par" : "impar"
+     }
+
+     document.body.innerHTML = calcularParidadBis(5);
+
+
+     // Crea una función que reciba nombre y apellidos, los ponga en mayusculas, los concatene y los devuelva dentro de otra función que le concatena la edad pasada por parámetro 
+
+    function fullName(nombre, apellido) {        
+        return `${nombre.toUpperCase()}  ${apellido.toUpperCase()}`
+
+    }
+
+    function fullNameAge(edad){
+        return `${fullName("Monica ", "Mataix")} y mi edad es ${edad}`
+    }
+    
+     document.body.innerHTML =  fullNameAge(35);
+
+    </script>
+
+</body>
+</html>

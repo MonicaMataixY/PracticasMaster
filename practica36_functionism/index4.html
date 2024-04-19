@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de funciones</title>
+</head>
+
+<body>
+    <div class="domContainer">
+        <div class="objDom" style="border: 2px solid black">Hola soy un objeto dom</div>
+    </div>
+   
+    <div class="action-buttons">
+        <button value="copy">Copy</button>
+        <button value="delete">Delete</button>
+        <button value="insert">Insert</button>
+    </div>
+
+
+<script>
+
+
+//Crea una función que dado un elemento dom permita: borrarlo, copiarlo debajo, insertar un texto dentro del elemento
+    //dependiendo de los parámetros que se le pasen función. 
+        //Ejemplo: domManipulator(obj, borrar) -> borra
+        //Ejemplo: domManipulator(obj, copiar) -> copia
+        //Crea botones HTML que lancen la función
+
+
+const objDomContainer = document.querySelector('.domContainer');
+const actionBtns = document.querySelector('.action-buttons');
+
+const domManipulation = function(e){
+    const objDom = document.querySelector('.objDom');
+
+    if(e.target.value === "copy"){
+        //copiar con clodeNode y hago if dentro de if para evitar errores en consola de cuando no  hay nada que borrar ni copiar
+        if(objDom){
+            objDomContainer.appendChild(objDom.cloneNode(true));
+        }
+        
+    }else if(e.target.value === "delete"){
+        //borrar 
+        if(objDom){
+            objDom.remove(); 
+        }
+    
+    }else if(e.target.value === "insert"){
+        //insertar
+        objDomContainer.innerHTML += `<div class="objDom" style="border: 2px solid black">Hola soy un objeto dom</div` 
+       
+    }else{
+        return; //si no devuelvo valor me salgo de la función 
+
+    }}
+
+
+    actionBtns.addEventListener('click', domManipulation)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functionism</title>
+</head>
+
+<body>
+
+<script>
+//1. Crea una función que pinte una circunferencia en el centro de la pantalla del diámetro especificado por parámetro de la misma (en px).
+
+function pintarCircunferencia(diametro){
+
+document.body.innerHTML += 
+    `<div 
+        style=" border-radius:50%; 
+                background:red; 
+                width:${diametro}px; 
+                height:${diametro}px">`;
+}
+pintarCircunferencia(150);
+pintarCircunferencia(250);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de funciones</title>
+</head>
+
+<body>
+
+<script>
+
+    /*TIPOS DE FUNCIONES*/
+
+    pepa();
+
+
+    //Función declarada - la puedo llamar antes de definirla
+    function pepa() {
+        //Código a ejecutar 
+        console.log('hola pepa');
+    }
+
+    //Función expresión, casi igual a la declarada pero 
+    const juani = function(){
+        console.log('hola juani');
+    }
+
+    juani();
+
+    //Funciones anónimas, solo funciona dentro de una expresión o un callback, lo hemos visto dentro de un addeventlistener
+    document.body.addEventListener('click', function(){
+        console.log('click');
+    })
+
+    //IIFE - Función autoinvocada - me sirve para hacer componentes 
+    (function pastel(){
+        console.log('pastel');
+    })()
+
+    //IIFE - Función autoinvocada - opero con variables
+    (function pastel(mens){
+        console.log(mens);
+    })('pastel')
+
+    //ARROW FUNCTION - es una función que no genera scope, el ambito donde una variable o funcion está disponible para el resto del codigo
+    const loquesea = (param1, param2) =>{
+        //codigo
+    }
+
+    //función recursiva función que se llama así misma y con esto puedo crear loops de función y también se utiliza mucho con animaciones 
+
+    function pepe(){
+        console.log('pepe');
+    
+        pepe();
+    }
+    pepe();
+</script>
+
+</body>
+</html>
+

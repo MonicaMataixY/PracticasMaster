@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functionism</title>
+</head>
+
+<body>
+
+<script>
+//5. Crea un objeto que tenga un método que permita concatenar los valores de todas sus propiedades (sin harcodear).
+
+//objeto
+const myObj = {
+    p1 : "Mike",
+    p2 : "Wasowski", 
+    p3 : 26,
+    p4: 345,
+    p5: "hola",
+    concat: function() {
+
+        //creo variable vacía
+        let result = "";
+        
+        //creo array con todas las props del objeto
+        Object.values(this).forEach(prop => {
+            //concateno
+            if(typeof prop != "function")
+            result += prop + " ";
+        })
+        //devuelvo el valor concatenado
+        return result;
+    }
+}
+
+//Object.keys
+
+//Object.keys(myObj)
+//Pinto myObj.function
+document.body.innerHTML = myObj.concat();
+
+//Object.entries
+console.log(Object.entries(myObj));
+
+
+</script>
+
+</body>
+</html>
+

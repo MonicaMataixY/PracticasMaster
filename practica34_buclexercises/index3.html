@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+</head>
+
+<body>
+
+    <script>
+
+    //Crea un calendario íntegramente generado desde Javascript con un css grid.
+    const meses = [
+                'enero', 
+                'febrero', 
+                'marzo', 
+                'abril', 
+                'mayo', 
+                'junio', 
+                'julio', 
+                'agosto', 
+                'septiembre', 
+                'octubre', 
+                'noviembre', 
+                'diciembre'
+            ]; 
+
+        
+    //creo container para insertar calendario y lo transformo en un grid
+    document.body.innerHTML = `<div class="container" style="display:grid; grid-template-columns:repeat(4,1fr); min-height:400px;"></div>`;
+        
+        
+    //capturo container
+    const container = document.querySelector('.container');
+        
+
+    //recorro el array de meses con un foreach 
+        meses.forEach(mes =>{
+
+            //Inyecto contenedor de mes y titulo
+            container.innerHTML += `<div class="${mes}" style="display:grid; grid-template-columns:repeat(7,1fr); border: 1px solid #000; margin: 20px"><p style="grid-column:1/8; padding: 10px; background-color:yellow;">${mes}</p></div>`;
+
+    //capturo mes actual 
+        const mesactual = document.querySelector("."+mes); 
+        
+    
+    
+    //pinto 31 días y lo meto dentro de la clase mesactual para que no sobrescriba el grid anterior          
+    //creo variable días con let dias
+            let dias = 31;
+
+            //los ifs deben ir fuera del for porque si no lo repiten todas las veces 
+            if (mes == "febrero") {
+                dias = 29;
+            }
+
+            //aqui uso la || para decir "o" y asi agrupo las clases que son iguales 
+            if (mes == "abril" || mes == "junio" || mes == "septiembre" || mes == "noviembre") {
+                dias = 30;
+            }
+          
+
+            for (let i = 0; i < dias; i++) {
+                
+                mesactual.innerHTML += `<p style="padding: 5px;">  ${i + 1}  </p>`;
+                
+            }
+            
+        })
+
+
+
+        
+  
+    </script>
+
+</body>
+</html>

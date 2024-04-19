@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiaco</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        td {
+            border: 3px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+
+   <table class="container" style="border: 2px solid black; background:black;"></table>
+    
+
+<script>
+
+const container = document.querySelector('.container');
+
+
+const zodiacCapricornio = { signo: 'Capricornio', elemento: 'Tierra', fechas: '23 de diciembre - 22 de enero', planeta: 'Saturno',};
+
+const zodiacAcuario = { signo: 'Acuario', elemento: 'Aire',fechas: '23 de enero - 20 de febrero', planeta: 'Urano y Saturno',};
+
+const zodiacPiscis = {signo: 'Piscis', elemento: 'Agua', fechas: '21 de febrero - 20 de marzo', planeta: 'Neptuno y Júpiter',};
+
+const zodiacAries = { signo: 'Aries', elemento: 'Fuego',  fechas: '21 de marzo - 19 de abril', planeta: 'Marte y Plutón', };
+
+const zodiacTauro = { signo: 'Tauro',  elemento: 'Tierra', fechas: '20 de abril - 20 de mayo', planeta: 'Venus y Tierra',};
+
+const zodiacGeminis = { signo: 'Géminis', elemento: 'Aire',fechas: '21 de mayo - 20 de junio', planeta: 'Mercurio',};
+
+const zodiacCancer = { signo: 'Cáncer', elemento: 'Agua', fechas: '21 de junio - 20 de julio', planeta: 'Luna',};
+
+const zodiacLeo = { signo: 'Leo', elemento: 'Fuego', fechas: '21 de julio - 22 de agosto', planeta: 'Sol',};
+
+const zodiacVirgo = { signo: 'Virgo', elemento: 'Tierra', fechas: '23 de agosto - 23 de septiembre', planeta: 'Plutón y Marte',};
+
+const zodiacLibra = { signo: 'Libra', elemento: 'Aire', fechas: '24 de septiembre - 23 de octubre', planeta: 'Venus',};
+
+const zodiacEscorpio = { signo: 'Escorpio', elemento: 'Agua',fechas: '24 de octubre - 22 de noviembre', planeta: 'Plutón y Marte',};
+
+const zodiacSagitario = { signo: 'Sagitario', elemento: 'Fuego',fechas: '23 de noviembre - 22 de diciembre', planeta: 'Júpiter',};
+
+console.log(Object.entries(zodiacCapricornio)); 
+
+// entries devuelve un array con el key y el valor 
+// object.keys() devuelve el key
+// object.value() devuelve solo el valor
+
+container.innerHTML += "<tr style='background: white';><td>"+ "SIGNO" +"</td><td>"+ "ELEMENTOS" +"</td><td>"+ "FECHAS" +"</td><td>"+ "PLANETA" +"</td></tr>" +"<tr style='background:#d0da87';><td>"+ Object(zodiacCapricornio.signo) +"</td><td>"+ Object(zodiacCapricornio.elemento) +"</td><td>"+ Object(zodiacCapricornio.fechas) +"</td><td>"+ Object(zodiacCapricornio.planeta) +"</td></tr>" +  "<tr style='background:#b6d3bc';><td>"+ Object(zodiacAcuario.signo) +"</td><td>"+ Object(zodiacAcuario.elemento) +"</td><td>"+ Object(zodiacAcuario.fechas) +"</td><td>"+ Object(zodiacAcuario.planeta) +"</td></tr>" +  "<tr style='background:#92a5d1';><td>"+ Object(zodiacPiscis.signo) +"</td><td>"+ Object(zodiacPiscis.elemento) +"</td><td>"+ Object(zodiacPiscis.fechas) +"</td><td>"+ Object(zodiacPiscis.planeta) +"</td></tr>" +  "<tr style='background:#d8938d';><td>"+ Object(zodiacAries.signo) +"</td><td>"+ Object(zodiacAries.elemento) +"</td><td>"+ Object(zodiacAries.fechas) +"</td><td>"+ Object(zodiacAries.planeta) +"</td></tr>" +  "<tr style='background:#d0da87';><td>"+ Object(zodiacTauro.signo) +"</td><td>"+ Object(zodiacTauro.elemento) +"</td><td>"+ Object(zodiacTauro.fechas) +"</td><td>"+ Object(zodiacTauro.planeta) +"</td></tr>" +  "<tr style='background:#b6d3bc';><td>"+ Object(zodiacGeminis.signo) +"</td><td>"+ Object(zodiacGeminis.elemento) +"</td><td>"+ Object(zodiacGeminis.fechas) +"</td><td>"+ Object(zodiacGeminis.planeta) +"</td></tr>" +  "<tr style='background:#92a5d1';><td>"+ Object(zodiacCancer.signo) +"</td><td>"+ Object(zodiacCancer.elemento) +"</td><td>"+ Object(zodiacCancer.fechas) +"</td><td>"+ Object(zodiacCancer.planeta) +"</td></tr>" +  "<tr style='background:#d8938d';><td>"+ Object(zodiacLeo.signo) +"</td><td>"+ Object(zodiacLeo.elemento) +"</td><td>"+ Object(zodiacLeo.fechas) +"</td><td>"+ Object(zodiacLeo.planeta) +"</td></tr>" +  "<tr style='background:#d0da87';><td>"+ Object(zodiacVirgo.signo) +"</td><td>"+ Object(zodiacVirgo.elemento) +"</td><td>"+ Object(zodiacVirgo.fechas) +"</td><td>"+ Object(zodiacVirgo.planeta) +"</td></tr>" +  "<tr style='background:#b6d3bc';><td>"+ Object(zodiacLibra.signo) +"</td><td>"+ Object(zodiacLibra.elemento) +"</td><td>"+ Object(zodiacLibra.fechas) +"</td><td>"+ Object(zodiacLibra.planeta) +"</td></tr>" +  "<tr style='background:#92a5d1';><td>"+ Object(zodiacEscorpio.signo) +"</td><td>"+ Object(zodiacEscorpio.elemento) +"</td><td>"+ Object(zodiacEscorpio.fechas) +"</td><td>"+ Object(zodiacEscorpio.planeta) +"</td></tr>" +  "<tr style='background:#d8938d';><td>"+ Object(zodiacSagitario.signo) +"</td><td>"+ Object(zodiacSagitario.elemento) +"</td><td>"+ Object(zodiacSagitario.fechas) +"</td><td>"+ Object(zodiacSagitario.planeta) +"</td></tr>"
+
+</script>
+
+</body>
+</html>

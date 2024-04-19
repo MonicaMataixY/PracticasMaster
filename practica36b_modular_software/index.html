@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Software</title>
+</head>
+
+<body>
+    <div class="container">
+        <img class="domItem" src="https://picsum.photos/200/300" alt="fotos random" title="foto-aleatoria">
+    </div>
+    
+
+<script>
+
+    //capturo elemento dom
+    const domElement = document.querySelector('.container');
+    
+    const domItem = document.querySelector('.domItem');
+
+    //defino función principal
+    function domAction(domItem) {
+        changeStyles(domItem);
+        changeData(domItem);
+    }
+    
+    //Función para estilos
+    function changeStyles(domItem) {
+        domItem.style.padding = "40px";
+        domItem.style.background = "red";
+        domItem.style.border = "8px solid black";
+    }
+
+    //Función para contenidos
+    function changeData(domItem) {
+        domItem.childNodes.forEach(element => {
+            if(element.title=="foto aleatoria"){
+                element.title = "tralara";
+            }
+        });
+    }
+
+    //llamo a la función principal
+     domAction(domItem);
+
+</script>
+
+</body>
+</html>

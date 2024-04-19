@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    
+
+<script>
+
+    const objX = {
+        showScope: ()=>{
+            //no genera scope
+            console.log(this);
+        },
+        
+        showScope2: function(){
+            //si genera scope
+
+            console.log(this);
+        }
+
+
+    }
+
+    objX.showScope();
+    objX.showScope2();
+
+
+</script>
+
+</body>
+</html>

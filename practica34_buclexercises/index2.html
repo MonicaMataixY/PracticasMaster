@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bucle excercises</title>
+</head>
+
+<body>
+
+    <script>
+
+        //Crea 100 botones con un número dentro del 1 al 100 que cuando hagas click en ellos lancen el mensaje en consola: hice click en el número [x]!
+
+        //PINTAR BOTONES
+        for (let i= 1; i<101; i++) {
+            document.body.innerHTML += "<button style= 'margin:2px; cursor:pointer'>" + i + "</button>";
+        };
+
+        //CAPTURO BOTONES
+        const allbuttons = document.querySelectorAll('button');
+
+        //LOS RECORRO Y AÑADO EL EVENT LISTENER
+        for(let i=0; i<allbuttons.length; i++) {
+            allbuttons[i].addEventListener('click', function(){
+                console.log("click en ", i+1);
+            })
+        }
+
+        
+   
+
+    
+
+    </script>
+
+</body>
+</html>
