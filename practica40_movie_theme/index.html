@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Time</title>
+</head>
+
+<body>
+
+    <style></style>
+
+<h1>hola</h1>
+    
+    <script>
+        //obten los datos de la siguiente API https://rickandmortyapi.com/api/character/108
+
+        fetch ('https://rickandmortyapi.com/api/character/108') //me he bajado este recurso url 
+        .then( 
+            (response) =>{
+             response.json().then(
+                data => {
+                    console.log(data) 
+                }
+            ) 
+        } )
+
+        
+    </script>
+
+</body>
+</html>

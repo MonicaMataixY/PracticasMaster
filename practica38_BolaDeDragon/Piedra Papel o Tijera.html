@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel o Tijera</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
+        
+        body{
+            background-color: rgb(235, 124, 69);
+        }
+
+        .container{
+            margin: 0 auto;
+            max-width: 600px;
+            height: 100vh;
+            max-height: 745px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #group-btn {
+            display: flex;
+            width: 100%; 
+        }
+
+        #group-btn > button > img {
+            width: 100%;
+        }
+
+        #start-text {
+            font-size: 26px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            padding: 10px;
+        }
+
+        footer{
+            text-align: center;
+        }
+
+        #result {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imagen-rock {
+            width: 20%;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+
+<div class="container">
+
+    <h1>Piedra, papel o tijeras</h1>
+
+    <div id="result">
+        <img class="imagen-rock" id="machine-img" src="img2/piedra.png">
+
+        <div id="start-text">
+            Pulsa una opción para jugar
+        </div>
+
+        <img class="imagen-rock" id="user-img" src="img2/piedra.png">
+    </div>
+
+   
+
+    <div id="group-btn">
+        <button id="rock" type="button">
+            <img src="img2/piedra.png" alt="piedra">
+        </button>
+        <button id="paper" type="button">
+            <img src="img2/papel.png" alt="papel">
+        </button>
+        <button id="scissors" type="button">
+            <img src="img2/tijeras.png" alt="tijeras">
+        </button>
+    </div>
+    
+<footer>Made by Mónica with love</footer>
+
+</div>
+    
+
+<script>
+
+    //valor de cada player
+    const ROCK = "rock";
+    const PAPER = "paper";
+    const SCISSORS = "scissors";
+
+    //Valor de resultados 
+    const TIE = 0;
+    const WIN = 1;
+    const LOST = 2;
+
+    //recojo ids de 3 botones
+    const rockBtn = document.getElementById("rock");
+    const paperBtn = document.getElementById("paper");
+    const scissorsBtn = document.getElementById("scissors");
+    const resultText = document.getElementById("start-text");
+    const userImg = document.getElementById("user-img");
+    const machineImg = document.getElementById("machine-img");
+    
+    
+
+    rockBtn.addEventListener("click", () =>{
+        play(ROCK);
+    })
+
+    paperBtn.addEventListener("click", () =>{
+        play(PAPER);
+    })
+
+    scissorsBtn.addEventListener("click", () =>{
+        play(SCISSORS);
+    })
+
+    function play(userOption){
+        const machineOption = calcMachineOption();
+        const result = calcResult (userOption, machineOption);
+
+        userImg.src = "img2/" + userOption + ".png";
+        machineImg.src = "img2/" + userOption + ".png";
+
+        switch(result){
+            case TIE: 
+            resultText.innerHTML = "You have tied!"
+                break;
+            case WIN: 
+            resultText.innerHTML = "You have win!"
+                break;
+            case LOST: 
+            resultText.innerHTML = "You have lost!"
+                break;
+
+        }
+       }
+
+
+    function calcMachineOption(){
+       const number = Math.floor(Math.random() * 3);
+       switch (number) {
+        case 0: 
+            return ROCK;
+        case 1: 
+            return PAPER;
+        case 2: 
+            return SCISSORS;
+       } 
+    }
+
+    function calcResult (userOption, machineOption){
+         
+        if(userOption === machineOption){
+            return TIE;
+
+        } else if (userOption === ROCK){
+            if(machineOption === PAPER) return LOST;
+            if(machineOption === SCISSORS) return LOST;
+
+
+        } else if (userOption === PAPER) {
+            if(machineOption === ROCK) return WIN;
+            if(machineOption === SCISSORS) return LOST;
+ 
+        } else if (userOption === SCISSORS) {
+            if(machineOption === ROCK) return LOST;
+            if(machineOption === PAPER) return WIN;
+    } 
+    }
+
+
+</script>
+
+</body>
+</html>

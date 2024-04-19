@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>CLASSLIST</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+    </style>
+
+    <section>
+        <div class="div1" id="josefa">
+            <button class="btn premium">HOLA</button>
+            <button class="btn">HOLA1</button>
+            <button class="btn">HOLA2</button>
+        </div>
+
+        <div class="div1" id="maria">
+            <button class="btn">HOLO</button>
+        </div>
+
+        <div class="div1" id="pepi">
+            <button class="btn">HOLI</button>
+        </div>
+
+        <div class="div1" id="juani">
+            <button class="btn">HOLE</button>
+        </div>
+    </section>
+
+    <script>
+
+        //classlist va sin punto 
+        
+        
+        //OK APLICAR UNA CLASE A TODOS LOS ELEMENTOS - cuando quiero capturar todos y aplicar una clase a todos 
+            //const capturedBueno = document.querySelectorAll('.btn'); 
+
+                    //setTimeout(() => {
+
+                        
+                        //añadido de clase 
+                        //capturedBueno.forEach(item =>{
+                        //  item.classList.add('custom-class');
+                        //})
+
+                // }, 4000);
+
+       //TOGGLE - quita y pon 
+                //const capturedBueno = document.querySelector('.btn');
+            
+                //setTimeout(()=> {
+                //añadido de clase por toggle
+                //  capturedBueno.forEach(item=>{
+                    //    item.classList.toggle('custom');
+                // })
+                //}, 2000);
+
+        //OK - AÑADIR CLASES Y QUITAR CLASES
+                //const capturedBueno1 = document.querySelector('.btn'); //por selector custom, te captura solo el primero, si quiero que mem capture todos, es querySelectorAll
+                
+                //setTimeout(() => {
+                    //añadido de clase puede ser con comillas dobles o simples 
+                    //capturedBueno1.classList.add('custom-class', 'cc2');
+                    //capturedBueno1.classList.add("custom-class", "cc2");
+
+                    //capturedBueno1[2].classList.add('custom-class', 'cc2'); tendría que añadir el [2] para decirle a qué elemento quiero que me cambie la clase si selecciono All
+
+                    //eliminar clase
+                    //capturedBueno1.classList.remove('btn');
+                //}, 4000);
+
+
+        //OK - PARA CAMBIAR UNA CLASE POR OTRA - hay que poner la primera en el html y te la cambiar por la segunda 
+                    //const capturedBueno = document.querySelector('.btn');
+
+                    //setTimeout(() => {
+                    //  capturedBueno.classList.replace('premium', 'normal');
+                    //}, 3000);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+
+{
+    "name":"mike", 
+    "apellidos": "wazowski",
+    "edad": 23,
+    "aficiones": ["hockey", "cervezas"],
+    "personalidad":{
+        "humor": "fino",
+        "musica": "disco"
+    },
+    "buleanos": true, 
+    "null": null
+}
+

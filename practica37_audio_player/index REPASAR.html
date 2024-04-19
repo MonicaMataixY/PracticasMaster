@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>Audio Player PROFE</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+       
+        .container {
+            background-color: black;
+            width: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Kdam Thmor Pro", sans-serif;
+        }
+
+        .audio_player {
+            border: 6px solid rgb(33, 177, 213);
+            width: 100%;
+            box-shadow: 1px 1px 5px 3px rgba(33, 177, 213, 0.838);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .audio_player-int {
+            border: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;   
+            padding: 20px; 
+        }
+
+        .audio_player-int-left {
+            border: 1px solid rgb(0, 0, 0);
+            width: 35%;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-evenly;
+            gap: 20px;
+            align-content: center;
+        }
+
+        .audio_player-int-right {
+            border: 1px solid rgb(33, 177, 213);
+            width: 65%;
+            height: 330px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        .julio_iglesias {
+            width: 100%;
+            border: 3px solid rgb(33, 177, 213);
+            
+        }
+
+        .audio_player-btns{
+            position: relative; 
+            bottom: 40px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+        }
+    
+        .button_stop, .button_play, .button_pause, .button_next {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    
+        .audio_player-trackname, .audio_player-duration {
+            color: rgb(33, 177, 213);
+            text-shadow: 1px 1px 5px rgb(199, 204, 134);
+        }
+
+        .player__song, .player__timer {
+            font-size: 3em;
+        }
+
+        .button_play-img, .button_stop-img, .button_pause-img, .button_next-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        
+    </style>
+
+
+<div class="container">
+    <div class="audio_player">
+        <div class="audio_player-int">
+            <div class="audio_player-int-left">
+                <div class="audio_player-img">
+                    <img class="julio_iglesias" src="img/julio.avif" alt="julio iglesias">
+                </div>
+
+              
+                
+                <div class="audio_player-btns">
+                   
+                    <button class="button_stop">
+                        <img class="button_stop-img" src="img/stop.svg" data-value ="stop" alt="stop">
+                    </button>
+                    <button class="button_play">
+                        <img class="button_play-img" src="img/play.svg" alt="play">
+                    </button>
+                    <button class="button_next">
+                        <img class="button_next-img" src="img/next.svg"  data-value ="next" alt="next">
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="audio_player-int-right">
+                <div class="audio_player-trackname">
+                    <h3 class="player__artist">TRACK NAME</h3>
+                    <h2 class="player__song">Bamboleo</h2>
+                </div>
+                <div class="audio_player-duration">
+                    <h3 class="player__artist">TIME</h3>
+
+                    <div class="player__timer">
+                       00:00:00
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+//Variables
+const audiotrack = new Audio('audio/bamboleo.mp3'); // metido audio y capturado 
+const buttons = document.querySelector(".audio_player-btns");
+
+
+//Funciones
+/**
+ * Function that handles all audio engine
+ */
+function audioEngine(e) {
+    if(e.target == buttons) {return}; // aqui le decimos que si clica en otro sitio que no sean los botones, no haga nada y que acabe la funcion con return - si le hago click al contenedor, no me hagas nada, salte de la función. si hago click en container y no botones, me salgo de la función 
+
+    //Discrimo funcion con tipo de target 
+    e.target.dataset.value == "play" && playEngine();
+    e.target.dataset.value == "stop" && stopEngine();
+    e.target.dataset.value == "next" && ffwEngine();
+}
+
+/**
+ * Function for playing audio
+ */
+
+function playEngine() {
+    audiotrack.play();
+}
+
+/**
+ * Function for stopping audio
+ */
+function stopEngine() {
+    audiotrack.pause();
+    audiotrack.currentTime = 0;
+}
+
+/**
+ * Function for acelerate audio - fast forward 
+ */
+ function ffwEngine() {
+    audiotrack.pause();
+    audiotrack.currentTime += 20;
+}
+
+
+//Llamada
+buttons.addEventListener ('click', audioEngine);
+
+</script>
+
+</body>
+</html>

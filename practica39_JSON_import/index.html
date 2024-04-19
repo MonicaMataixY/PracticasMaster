@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON import
+
+    </title>
+</head>
+
+<body>
+
+    <style>
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    </style>
+
+    <script>
+
+        //Llamar al json con fetch y le paso la url
+        //fetch("https://world.openfoodfacts.org/api/v0/product/5060292302201.json")
+            
+            //ejecuto las promesas
+            //.then(response =>{
+                //const food = response.json().then(data=>{ //me lo convierte en un objeto para que pueda acceder a sus propiedades
+                    //const myObj = data;
+                    //console.log(myObj.status);
+                //})
+            //})
+
+
+        
+        //Métodos para convertir de ida y de vuelta un método Json - ambas convierten el objeto en string 
+
+            //Datos
+            const dataUser = {
+                "name":"Monica",
+                "age":50,
+            }
+
+            //envío datos 
+            const stringJson = JSON.stringify(dataUser)
+            console.log(stringJson);
+            
+
+            //recepción de datos
+            const objJSon = JSON.parse(stringJson);
+            console.log(objJSon);
+            
+
+    </script>
+
+</body>
+</html>

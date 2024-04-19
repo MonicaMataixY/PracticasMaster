@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de atributos</title>
+</head>
+
+<body>
+
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+
+        .ajedrez {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            border: 8px solid black;
+        }
+
+        .celda {
+            aspect-ratio: 1/1
+        }
+
+        [value= negra] {
+            background-color: black;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 2rem;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        .redcell {
+            background-color: red;
+        }
+    </style>
+
+    <div class="ajedrez">
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+        <div class="celda" value="blanca"></div>
+        <div class="celda" value="negra"></div>
+
+    </div>
+    <button class="btn">TOGGLE CELLS </button>
+
+    <script>
+
+        //Crea un tablero de ajedrez de 8x8 con un grid que elimine las celdas blancas Y un botón que aplique  UNA CLASE A TODOS LOS ELEMENTOS CON EL VALUE "BLANCA"
+
+        //1. TODAS LAS CAPTURAS
+        //CAPTURO BTN
+        const btn = document.querySelector('.btn');
+
+        //CAPTURO CELDAS BLANCAS
+        const celdaBlanca = document.querySelectorAll('[value="blanca"]');
+
+        //2. DEFINO FUNCIÓN DE PINTADO
+        function paintCells() {
+            celdaBlanca.forEach(item=>{
+            item.classList.toggle('redcell');
+        })
+        }      
+        
+        //3. EVENTO CLICK
+        btn. addEventListener('click', paintCells);
+
+       
+
+    </script>
+</body>

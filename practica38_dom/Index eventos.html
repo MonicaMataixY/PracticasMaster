@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>Eventos</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box; cursor: pointer;
+        }
+
+    </style>
+
+    <section>
+        <div class="div">
+            <button class="btn" style="border:solid 5px red; padding:30px; border-radius:30px;">HOLA</button>
+            
+        </div>
+
+   
+    </section>
+    
+
+    <script>
+
+        const section = document.querySelector('section');
+        const div = document.querySelector('.div');
+        const btn = document.querySelector('.btn');
+        
+        
+        const logSection = function(){
+            console.log('section')
+        }
+        
+        const logDiv = function(){
+            console.log('div')
+        }
+
+        const logBtn = function(e){
+            console.log('btn')
+        }
+
+        //añadir evento
+        div.addEventListener('click', logSection, {once:true, capture:true});
+        div.addEventListener('click', logDiv);
+        btn.addEventListener('click', logBtn);
+        
+
+
+
+
+
+        //btn.removeEventListener('click', invent);//eliminar evento, para hacer esto, hay que meter la función dentro de una variable
+
+    </script>
+
+</body>
+</html>

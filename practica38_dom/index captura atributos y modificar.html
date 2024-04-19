@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de atributos</title>
+</head>
+
+<body>
+
+    <div title="mydiv" class="myclass" disabled="false">
+        hola
+    </div>
+
+
+    <script>
+
+        //obtener atributo title con querySelector
+        const elementX = document.querySelector('[title="mydiv"]');
+        
+        // obtengo atributo con getAtribute
+        const capturedTitle = elementX.getAttribute('disabled');
+        
+        //obtengo atributo por propiedad del objeto 
+        const capturedProp = elementX.title;
+
+        //modificar atributo 'atributo actual' "atributo nuevo"
+        elementX.setAttribute('title', "title new"); // por atributo
+        elementX.title = "cambiado 2"; // con . y nombre de atributo
+
+        elementX.style.background = "red"; // cambiando estilos por js 
+
+
+    </script>
+</body>

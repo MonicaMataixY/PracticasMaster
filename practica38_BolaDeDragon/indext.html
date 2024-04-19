@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>Bola de Dragón</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.2rem;}
+
+        .game{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+            background: linear-gradient(70deg, black, rgb(16, 11, 175));
+            background-color: blue;
+        }
+        
+        .game__container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        img{
+           max-width: 100%;
+        }
+
+        .game__fighter{
+            border: 5px solid rgb(249, 158, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: rgb(67, 67, 67);
+            box-shadow:  -6px -6px 20px 0px rgba(240, 243, 37, 0.264), -6px -6px 6px 0px rgba(239, 239, 26, 0.274),
+            6px 6px 20px rgba(240, 243, 37, 0.355), 5px 5px 6px 0px rgba(239, 239, 26, 0.414);
+        }
+
+        .game__fighter-in {
+            height: 400px;
+            width:300px;
+            display: contents;
+        }
+
+        .game__fighter-in img{
+            height: 400px;
+            width:300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        button {
+            border: 5px solid black;
+            border-radius: 3px;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow:  -8px -8px 20px 0px rgba(37, 243, 51, 0.264), -6px -6px 6px 0px rgba(47, 239, 26, 0.274),
+            8px 8px 20px rgba(37, 243, 68, 0.355), 5px 5px 6px 0px rgba(37, 239, 26, 0.414);
+        }
+
+        /*RESPONSIVE*/ 
+
+        @media  screen and (max-width: 960px) {
+            .game__fighter{
+            width: 300px;
+            height: 400px;
+        }
+    
+        .game__container{
+            gap: 20px;
+        }}
+        
+        @media  screen and (max-width: 750px) {
+            .game__fighter{
+            width: 200px;
+            height: 300px; 
+        }
+        .game__container{
+            gap: 10px;
+        }}
+
+        .winner {
+            position: relative;
+            border: 8px solid #F00;
+        }
+
+        .winner::before {
+            content: "WINNER!";
+            position: absolute;
+            font-size: 2rem;
+            color: #F00;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .draw {
+            position: relative;
+            border: 8px solid rgb(208, 0, 255);    
+        }
+
+        .draw::before {
+            content: "DRAW!";
+            position: absolute;
+            font-size: 2rem;
+            color:  rgb(208, 0, 255);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+    </style>
+
+<section class="game">
+    <div class="game__container">
+
+        <!-- fighter L -->
+        <div class="game__fighter game__fighter--left">
+            <div class="game__fighter-in game__fighter-in--left">
+                <img id="imagen__random" src="img/picollo.webp">
+            </div>
+        </div>
+        <!-- /fighter L -->
+
+        <!-- Fight button -->
+        <div class="button">
+            <button>FIGHT!</button>
+        </div>
+        <!-- /Fight button -->
+
+        <!-- Fighter R -->
+        <div class="game__fighter game__fighter--right">
+            <div class="game__fighter-in game__fighter-in--right">
+                <img id="imagen__random" src="img/goku.webp">
+            </div>
+        </div>
+        <!-- /Fighter R -->
+    </div>
+</section>
+    
+
+<script>
+
+
+//nos dan este objeto
+const personajes = {
+
+    p0: { 
+        name:'goku', 
+        force:'1',
+    },
+    p1: { 
+        name:'vejeta',
+        force:'2',
+    },
+    p2: { 
+        name:'picollo',
+        force:'3',
+    }
+};
+
+//1. Captura de elementos 
+const btnFight = document.querySelector('.button button');
+const fotoContainerLeft = document.querySelector('.game__fighter-in--left');
+const fotoContainerRight = document.querySelector('.game__fighter-in--right');
+
+function fight(){
+    
+    //Accedo aleatoriamente al personaje (hay que hacerlo para el personaje de la derecha y de la izquierda)
+    const ObjectKeyLeft = Object.keys(personajes)[Math.floor(Math.random()*3)];
+    const ObjectKeyRight = Object.keys(personajes)[Math.floor(Math.random()*3)];
+
+    //Obtengo url 
+    const urlLeft = "img/" + personajes[ObjectKeyLeft].name + ".webp"
+    const urlRight = "img/" + personajes[ObjectKeyRight].name + ".webp"
+
+    //obtengo fuerza
+    const forceLeft = personajes[ObjectKeyLeft].force;
+    const forceRight= personajes[ObjectKeyRight].force;
+
+    
+    insertPhoto(urlLeft, urlRight);//aqui llamo a la función de insertar foto
+    winner(forceLeft, forceRight); //aqui llamo a la función de pintar winner o draw
+}
+
+
+
+function insertPhoto(urlLeft, urlRight){
+    
+    //Crear imágenes
+    const photoLeft = document.createElement('img');//creo imagen
+    photoLeft.src = urlLeft;//le digo cual es su src con la url 
+    fotoContainerLeft.innerHTML = "";//limpio container antes de inyectar
+    fotoContainerLeft.appendChild(photoLeft);//la inserto en el container
+
+    const photoRight = document.createElement('img');//creo imagen
+    photoRight.src = urlRight;//le digo cual es su src con la url 
+    fotoContainerRight.innerHTML = "";//limpio container antes de inyectar
+    fotoContainerRight.appendChild(photoRight);//la inserto en el container
+}
+
+
+function winner(forceLeft, forceRight) {
+
+    //primero limpio las clases winner/draw
+    fotoContainerLeft.parentNode.classList.remove('winner', 'draw');
+    fotoContainerRight.parentNode.classList.remove('winner', 'draw');
+
+    //calculo ganador
+    if(forceLeft > forceRight) {
+        fotoContainerLeft.parentNode.classList.add('winner');
+    }
+    else if (forceRight > forceLeft) {
+        fotoContainerRight.parentNode.classList.add('winner');
+    } else {
+        fotoContainerLeft.parentNode.classList.add('draw');
+        fotoContainerRight.parentNode.classList.add('draw');
+    }
+}
+
+btnFight.addEventListener('click', fight);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>APIs</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+    </style>
+
+    <section>
+        <div class="div1" id="josefa">
+            <button class="btn">HOLA</button>
+            <button class="btn">HOLA1</button>
+            <button class="btn">HOLA2</button>
+        </div>
+
+        <div class="div1" id="maria">
+            <button class="btn">HOLO</button>
+        </div>
+
+        <div class="div1" id="pepi">
+            <button class="btn">HOLI</button>
+        </div>
+
+        <div class="div1" id="juani">
+            <button class="btn">HOLE</button>
+        </div>
+    </section>
+
+    <script>
+
+        // en getElement no se pone nunca . eso es en queryselector
+        //Captura de elementos 
+            //const myDiv = document.querySelector('div');
+            //document.getElementById('josefa'); //dentro del BODY
+            //myDiv.getElementById('josefa');//dentro de myDiv
+
+        const capturedElements = document.getElementById('josefa'); //por id
+        console.log(capturedElements);
+
+        const capturedElements2 = document.getElementsByClassName('div1')[1]; //por className, me da una colección de elementos html, con formato array, si le pongo [1] me accede al segundo método, recuerda que empieza a 0 
+        console.log(capturedElements2);
+
+        const capturedElements3 = capturedElements.getElementsByTagName('button'); //por etiqueta, la unica que hay es button, le he dicho que busque dentro de capturedElements, no de documento, entonces devuelve lo que hay ahí
+        console.log(capturedElements3);
+
+        //todas éstas están obsoletas - ahora se usa QUERYSELECTOR. En query selector puedo meterle cualquier clase css y es la misma api para todo: clases, ids, etc 
+
+        const capturedBueno = document.querySelector('.btn:last-child'); //para acceder al último elemento de la misma clase 
+        console.log(capturedBueno);
+
+        const capturedBueno1 = document.querySelector('.btn'); //por selector custom
+        console.log(capturedBueno1);
+
+        const capturedBueno2 = document.querySelectorAll('.btn'); // por selector custom múltiple, esto me devuelve un nodelist y lo puedo recorrer con métodos de array 
+        console.log(capturedBueno2); 
+
+
+    </script>
+
+</body>
+</html>

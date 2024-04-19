@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>Bola de Dragón</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.2rem;}
+
+        .game{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+            background: linear-gradient(70deg, black, rgb(16, 11, 175));
+            background-color: blue;
+        }
+        
+        .game__container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        img{
+           max-width: 100%;
+        }
+
+        .game__fighter{
+            border: 5px solid rgb(249, 158, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: rgb(67, 67, 67);
+            box-shadow:  -6px -6px 20px 0px rgba(240, 243, 37, 0.264), -6px -6px 6px 0px rgba(239, 239, 26, 0.274),
+            6px 6px 20px rgba(240, 243, 37, 0.355), 5px 5px 6px 0px rgba(239, 239, 26, 0.414);
+        }
+
+        .game__fighter-in {
+            height: 400px;
+            width:300px;
+            display: contents;
+        }
+
+        .game__fighter-in img{
+            height: 400px;
+            width:300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        button {
+            border: 5px solid black;
+            border-radius: 3px;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow:  -8px -8px 20px 0px rgba(37, 243, 51, 0.264), -6px -6px 6px 0px rgba(47, 239, 26, 0.274),
+            8px 8px 20px rgba(37, 243, 68, 0.355), 5px 5px 6px 0px rgba(37, 239, 26, 0.414);
+        }
+
+        /*RESPONSIVE*/ 
+
+        @media  screen and (max-width: 960px) {
+            .game__fighter{
+            width: 300px;
+            height: 400px;
+        }
+    
+        .game__container{
+            gap: 20px;
+        }}
+        
+        @media  screen and (max-width: 750px) {
+            .game__fighter{
+            width: 200px;
+            height: 300px; 
+        }
+        .game__container{
+            gap: 10px;
+        }}
+
+    </style>
+
+<section class="game">
+    <div class="game__container">
+
+        <!-- fighter L -->
+        <div class="game__fighter game__fighter--left">
+            <div class="game__fighter-in game__fighter-in--left">
+                <img id="imagen__randomL" src="img/picollo.webp">
+            </div>
+        </div>
+        <!-- /fighter L -->
+
+        <!-- Fight button -->
+        <div class="button">
+            <button>FIGHT!</button>
+        </div>
+        <!-- /Fight button -->
+
+        <!-- Fighter R -->
+        <div class="game__fighter game__fighter--right">
+            <div class="game__fighter-in game__fighter-in--right">
+                <img id="imagen__randomR" src="img/goku.webp">
+            </div>
+        </div>
+        <!-- /Fighter R -->
+    </div>
+</section>
+    
+
+<script>
+
+
+
+let personajes = {
+  
+    p0: { 
+        name:'goku', //p+random+.webp -accedes al objeto con personajes [p+random]   object keys 
+        force:'1',
+    },
+
+    p1: { 
+        name:'vejeta',
+        force:'2',
+    },
+
+    p2: { 
+        name:'picollo',
+        force:'3',
+    }
+}
+
+//create element con la img y el src // concatenar el nombre webp al nombre
+//1. capturo todo lo necesario
+    //let gameFighterLeft = document.querySelector('#imagen__randomL');
+    //let gameFighterRight  = document.querySelector('#imagen__randomR');
+    const fightBtn = document.querySelector('.button');// Obtener el botón
+
+//2. Adjuntar un evento de clic al botón
+    fightBtn.addEventListener('click', mostrarImagenes);
+   
+
+//insertar imagen por jS
+      let gameFighterLeft = document.querySelector('#imagen__randomL');
+      let gameFighterRight = document.querySelector('#imagen__randomR');
+       
+            let imagenLuchador = new DocumentFragment();
+            gameFighterLeft.appendChild(imagenLuchador);
+            gameFighterRight.appendChild(imagenLuchador);
+
+    
+//creo una funcion y meto las dos funciones
+        function mostrarImagenes(){
+            mostrarImagenAleatoria2()
+            mostrarImagenAleatoria()
+        }
+
+// Función para mostrar una imagen aleatoria en la izquierda
+function mostrarImagenAleatoria() {
+          
+        // Creamos indice aleatorio para que saque una imagen cualquiera de la lista
+            let indiceAleatorio = Math.floor(Math.random() * 3);
+            const ObjectKey = "p"+indiceAleatorio; //p de personaje por eso los llamamos con la p delante
+
+            let rutaImagenAleatoria = "img/" + personajes[ObjectKey].name + ".webp";
+            
+            // Asignamos la ruta de la imagen aleatoria al atributo src de la imagen
+            gameFighterLeft.src = rutaImagenAleatoria;
+         
+        }
+
+//funcion para mostrar imagen aleatoria en la derecha
+function mostrarImagenAleatoria2() {
+         
+        // Creamos indice aleatorio para que saque una imagen cualquiera de la lista
+        let indiceAleatorio = Math.floor(Math.random() * 3);
+        const ObjectKey = "p"+indiceAleatorio;
+
+        let rutaImagenAleatoria = "img/" + personajes[ObjectKey].name + ".webp";
+        // Asignamos la ruta de la imagen aleatoria al atributo src de la imagen
+       gameFighterRight.src= rutaImagenAleatoria;
+
+    }   
+     
+
+    
+//acceder a sus fuerzas y mostrar si gana o pierde 
+
+
+
+
+</script>
+
+</body>
+</html>

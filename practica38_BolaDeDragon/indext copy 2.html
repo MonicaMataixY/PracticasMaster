@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Aleatoria al Clicar un Botón</title>
+</head>
+<body>
+    <!-- Botón para mostrar imagen aleatoria -->
+    <button id="botonMostrar">Mostrar Imagen Aleatoria</button>
+
+    <!-- Aquí es donde se mostrará la imagen aleatoria -->
+    <img id="imagen" src="" alt="Imagen aleatoria">
+
+    <script>
+        // Lista de rutas de imágenes
+        var imagenes = [
+            'goku.webp',
+            'vejeta.webp',
+            'picollo.webp',
+            // Agrega más rutas de imágenes si lo deseas
+        ];
+
+        // Función para mostrar una imagen aleatoria
+        function mostrarImagenAleatoria() {
+            // Obtenemos el elemento de la imagen mediante su ID
+            var imagenElement = document.getElementById('imagen');
+
+            // Seleccionamos una imagen aleatoria de la lista
+            var indiceAleatorio = Math.floor(Math.random() * imagenes.length);
+            var rutaImagenAleatoria = imagenes[indiceAleatorio];
+
+            // Asignamos la ruta de la imagen aleatoria al atributo src de la imagen
+            imagenElement.src = rutaImagenAleatoria;
+        }
+
+        // Obtener el botón mediante su ID
+        var botonMostrar = document.getElementById('botonMostrar');
+
+        // Adjuntar un evento de clic al botón
+        botonMostrar.addEventListener('click', mostrarImagenAleatoria);
+    </script>
+</body>
+</html>

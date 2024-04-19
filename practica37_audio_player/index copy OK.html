@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <title>Audio Player Monica</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+       
+        .container {
+            background-color: black;
+            width: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Kdam Thmor Pro", sans-serif;
+        }
+
+        .audio_player {
+            border: 6px solid rgb(33, 177, 213);
+            width: 100%;
+            box-shadow: 1px 1px 5px 3px rgba(33, 177, 213, 0.838);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .audio_player-int {
+            border: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;   
+            padding: 20px; 
+        }
+
+        .audio_player-int-left {
+            border: 1px solid rgb(0, 0, 0);
+            width: 35%;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-evenly;
+            gap: 20px;
+            align-content: center;
+        }
+
+        .audio_player-int-right {
+            border: 1px solid rgb(33, 177, 213);
+            width: 65%;
+            height: 330px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        .julio_iglesias {
+            width: 100%;
+            border: 3px solid rgb(33, 177, 213);
+            
+        }
+
+        .audio_player-btns{
+            position: relative; 
+            bottom: 80px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+        }
+    
+        .button_stop, .button_play, .button_pause, .button_next {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    
+        .audio_player-trackname, .audio_player-duration {
+            color: rgb(33, 177, 213);
+            text-shadow: 1px 1px 5px rgb(199, 204, 134);
+        }
+
+        .player__song, .player__timer {
+            font-size: 3em;
+        }
+
+        .button_play-img, .button_stop-img, .button_pause-img, .button_next-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .player__audio {
+            visibility: hidden;
+        }
+    </style>
+
+
+<div class="container">
+    <div class="audio_player">
+        <div class="audio_player-int">
+            <div class="audio_player-int-left">
+                <div class="audio_player-img">
+                    <img class="julio_iglesias" src="img/julio.avif" alt="julio iglesias">
+                </div>
+
+                <audio class="player__audio" controls>
+                    <source src="audio/bamboleo.mp3" type="audio/mpeg"/>
+                </audio> 
+                
+                <div class="audio_player-btns">
+                   
+                    <button class="button_stop">
+                        <img class="button_stop-img" src="img/stop.svg" alt="stop">
+                    </buttons>
+                    <button class="button_play">
+                        <img class="button_play-img" src="img/play.svg" alt="play">
+                        <img class="button_pause-img hide" src="img/pause.svg" alt="pause">
+                    </buttons>
+                    <button class="button_next">
+                        <img class="button_next-img" src="img/next.svg" alt="next">
+                    </buttons>
+                </div>
+
+            </div>
+
+            <div class="audio_player-int-right">
+                <div class="audio_player-trackname">
+                    <h3 class="player__artist">TRACK NAME</h3>
+                    <h2 class="player__song">Bamboleo</h2>
+                </div>
+                <div class="audio_player-duration">
+                    <h3 class="player__artist">TIME</h3>
+                    <h2 class="player__timer">03:02:22</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let buttonPlay = document.querySelector(".button_play-img");
+
+    let buttonStop = document.querySelector(".button_stop");
+
+    let audio = document.querySelector(".player__audio");
+
+    buttonPlay.addEventListener("click", () =>{
+        audio.setAttribute("src", "audio/bamboleo.mp3")
+        audio.play()
+        console.log(`Reproduciendo: ${audio.src}`)
+    })
+
+    buttonStop.addEventListener("click", () =>{
+        audio.setAttribute("src", "audio/bamboleo.mp3")
+        console.log(`Stop: ${audio.src}`)
+    })
+
+
+
+  
+
+
+</script>
+
+</body>
+</html>

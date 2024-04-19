@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>Elementos</title>
+</head>
+
+<body>
+
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    .board {
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(8,1fr);
+    }
+
+        
+    
+    </style>
+
+        <div id="board" class="board"></div>
+    
+    <script>
+        
+        //EJERCICIO - crear tablero de ajedrez con Create Element // un for, iteracion par blanca e impar negra, multiplo de 8 lo invierto fp 68 
+       
+            let tablero = document.querySelector('.board');//defino tablero
+            let fragment = new DocumentFragment();
+          
+        for(let x=0; x<64; x++){
+            
+            if (x % 2 === 0) {
+                let whiteSquare = document.createElement('div');
+                whiteSquare.style.background = "white";
+                whiteSquare.style.height = "50px";
+                whiteSquare.style.width = "50px";
+                whiteSquare.style.border = "2px solid black";
+                tablero.appendChild(whiteSquare)
+
+            }else {
+                let blackSquare = document.createElement('div');
+                blackSquare.style.background = "black";
+                blackSquare.style.height = "50px";
+                blackSquare.style.width = "50px";
+                blackSquare.style.border = "2px solid white";
+                tablero.appendChild(blackSquare)
+
+             
+             } } 
+
+            tablero.appendChild(fragment);
+
+     
+    </script>
+
+</body>
+</html>

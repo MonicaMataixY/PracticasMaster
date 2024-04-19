@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f4654f9eac.js" crossorigin="anonymous"></script>
+    <title>Elementos</title>
+</head>
+
+<body>
+
+    <style>
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box; font-size: 2rem;
+        }
+
+        .mybutton{
+            background-color: blueviolet;
+            cursor: pointer;
+        }
+
+        .mydiv {
+            border: 2px solid red;
+            height: 200px;
+        }
+
+        
+
+    </style>
+
+    <section id="mainSection"></section>
+    
+
+    <script>
+        
+        const mySection = document.querySelector('#mainSection');
+        mySection.innerHTML = "holi" //parsea HTML
+        mySection.textContent += " hola reina mora"//no parsea HTML --> mete un String, pongo += para que lo concatene y pueda ver todo el texto, si no, pondría solo =
+        
+
+        //CREACIÓN DE ELEMENTOS - Inserción de contenidos
+
+        //1. Definición del elemento
+        const btn = document.createElement('button'); //creo variable y la igualo a createElement
+        btn.classList.add('mybutton'); //le añado una clase por si luego quiero darle estilos
+        btn.textContent="CLICK"//meto texto
+
+        //2. Inserción del elemento
+        mySection.appendChild(btn); //inserto el elemento donde yo quiera
+
+
+
+
+        //EJERCICIO - crear un div que contenta el texto Hola con el borde rojo y un atributo tittle que cuando pases por encima diga "tenga el borde rojo"
+
+        //1. defino el elemento 
+        const div = document.createElement('div'); //creo variable y la igualo a createElement
+        div.classList.add('mydiv'); //añado una clase
+        mySection.appendChild(div);//lo inserto donde quiero
+
+        const logBtn = function(e){
+            div.textContent="tengo el borde rojo"
+        }
+
+        //añadir evento
+        div.addEventListener('mouseover', logBtn);
+
+
+        //RESOLUCIÓN PROFE CON DOCUMENT FRAGMENT
+        const fragment = new DocumentFragment();
+        const mydiv = document.createElement('div');
+        mydiv.textContent = "hola";
+        mydiv.title = "hola";
+        mydiv.style.border = "2px solid blue"; 
+        mydiv.style.margin = "20px";
+
+        fragment.append(mydiv);//añado elemento a fragmento
+        mySection.append(fragment);//inyecto fragmneto en mySection
+
+
+    </script>
+
+</body>
+</html>
