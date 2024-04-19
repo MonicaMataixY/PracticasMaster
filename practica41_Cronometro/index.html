@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+</head>
+
+<body>
+
+    <style> 
+
+    .reloj{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    .centisegundos, .segundos{
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    .botones {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    #start, #stop, #reset {
+        cursor: pointer;
+    }
+
+    </style>
+
+    
+<div class="reloj">
+    
+        <span class="segundos">0</span>
+        <span class="centisegundos">0</span>
+    </div>
+
+    <div class="botones">
+        <button id="start" value="start">START</button>
+        <button id="stop" value="stop">STOP</button>
+        <button id="reset" value="reset">RESET</button>
+    </div>
+
+
+    <script>
+
+    //capturo todo lo necesario
+    const btns = document.querySelector('.botones');
+    const centisegundos = document.querySelector('.centisegundos');
+    const segundos = document.querySelector('.segundos');
+
+    let centesimasCounter = 0;
+    let centesimas = {}; //lo defino fuera para poder acceder a ella en todas las funciones
+    let segundosCounter = 0;
+
+
+    
+   
+
+    //funcion para iniciar
+    function iniciarCrono(){
+         centesimas = setInterval(() => {
+            centesimasCounter++ //añado +1 al contador 
+
+            if(centesimasCounter === 100) {centesimasCounter = 0; segundosCounter++;}
+            centisegundos.innerHTML = centesimasCounter; 
+            segundos.innerHTML = segundosCounter;
+            //pinto el contador dentro del slot
+  
+
+        }, 10);
+      
+    }
+
+    
+    //funcion para parar
+    function pararCrono(){
+        clearInterval(centesimas);  
+    }
+
+
+
+    //funcion para resetear
+    function poneraCero(){
+        centisegundos.innerHTML = 0;
+        
+    }
+
+    //evento en los botones 
+    btns.addEventListener('click', function(e){
+        e.target.value === "start" && iniciarCrono();
+        e.target.value === "stop" && pararCrono();
+        e.target.value == "reset" && poneraCero();
+    })
+   
+
+
+    </script>
+
+</body>
+</html>
